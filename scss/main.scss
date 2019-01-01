@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Sarpanch");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import "variables";
+@import "config";
+@import "menu";
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+.bg {
+  clip-path: polygon(calc(100% - 35vw) 0, 100% 0, 100% 100%, 0 100%);
+  background: $gray;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  color: $primary;
+  &.lg-heading {
+    font-size: 5.5rem;
+    span {
+      color: $secondary;
+    }
+  }
+
+  &.sm-heading {
+    font-family: "Sarpanch";
+    font-size: 3.5rem;
+    width: auto;
+  }
+}
+
+main {
+  .text {
+    margin-bottom: 2em;
+  }
+
+  .icons {
+    position: absolute;
+    top: 350px;
+    margin-top: 0.5rem;
+    a {
+      padding: 0.4rem;
+      text-decoration: none;
+      color: $primary;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+main {
+  padding: 4rem;
+}

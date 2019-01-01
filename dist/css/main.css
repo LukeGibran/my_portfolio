@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Sarpanch");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.menu-btn {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    height: 2px;
+    width: 28px;
+    background: #242424;
+    margin: 0 0 0.3rem 0;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px); }
+
+* {
+  box-sizing: border-box; }
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Raleway", sans-serif; }
+
+.bg {
+  clip-path: polygon(calc(100% - 35vw) 0, 100% 0, 100% 100%, 0 100%);
+  background: #ebebeb;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  color: #353535; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 5.5rem; }
+    h1.lg-heading span,
+    h2.lg-heading span,
+    h3.lg-heading span {
+      color: #fbc00c; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    font-family: "Sarpanch";
+    font-size: 3.5rem;
+    width: auto; }
+
+main .text {
+  margin-bottom: 2em; }
+
+main .icons {
+  position: absolute;
+  top: 350px;
+  margin-top: 0.5rem; }
+  main .icons a {
+    padding: 0.4rem;
+    text-decoration: none;
+    color: #353535; }
+    main .icons a:hover {
+      color: #fbc00c; }
+
+main {
+  padding: 4rem; }
