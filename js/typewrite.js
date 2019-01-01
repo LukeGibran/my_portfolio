@@ -51,7 +51,7 @@ class TypeWriter {
 }
 
 // Init On DOM Load
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", setTimeout(init, 900));
 
 // Init app
 function init() {

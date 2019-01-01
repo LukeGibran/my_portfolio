@@ -24,6 +24,13 @@ html {
   z-index: -1;
 }
 
+.card {
+  border-left: 3px lighten($primary, 50) solid;
+  padding-left: 2em;
+  height: 100px;
+  margin-top: 18vh;
+}
+
 h1,
 h2,
 h3 {
@@ -52,7 +59,7 @@ main {
   .icons {
     position: absolute;
     top: 350px;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     a {
       padding: 0.4rem;
       text-decoration: none;
