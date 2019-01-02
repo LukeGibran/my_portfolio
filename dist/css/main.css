@@ -18,7 +18,8 @@
     width: 100vw;
     top: 0;
     right: 0;
-    border-radius: 0%; }
+    border-radius: 0%;
+    transition-duration: 0.5s; }
 
 .menu-btn {
   position: absolute;
@@ -104,6 +105,14 @@
       margin-top: 1.5rem; }
     .menu .nav-item.current > a {
       background: #fbc00c; }
+    .menu .nav-item:nth-child(1) {
+      transition-delay: 0.4s; }
+    .menu .nav-item:nth-child(2) {
+      transition-delay: 0.3s; }
+    .menu .nav-item:nth-child(3) {
+      transition-delay: 0.2s; }
+    .menu .nav-item:nth-child(4) {
+      transition-delay: 0.1s; }
   .menu .nav-link {
     font-family: "Oswald";
     font-size: 2.5rem;
@@ -114,18 +123,6 @@
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
       background: #fbc00c; }
-
-.nav-item:nth-child(1) {
-  transition-delay: 0.1s; }
-
-.nav-item:nth-child(2) {
-  transition-delay: 0.2s; }
-
-.nav-item:nth-child(3) {
-  transition-delay: 0.3s; }
-
-.nav-item:nth-child(4) {
-  transition-delay: 0.4s; }
 
 * {
   box-sizing: border-box; }
