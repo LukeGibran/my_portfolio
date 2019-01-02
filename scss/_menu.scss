@@ -1,5 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 .nav-bg {
-  content: "";
   background: $primary;
   border-radius: 50%;
   height: 280px;
@@ -8,7 +8,7 @@
   top: -10rem;
   right: -10rem;
   z-index: 1;
-  @include easeOut;
+  transition: all 0.8s ease-out;
 
   &.show {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%, 0 63%);
@@ -40,6 +40,7 @@
   &.close {
     transform: rotate(180deg);
     .btn-line {
+      background: #ffffff;
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
       }
@@ -55,16 +56,12 @@
   &.hv {
     &:hover {
       .btn-line {
+        background: $secondary;
         &:nth-child(1) {
-          transform: scale(1.2);
+          transition-delay: 0.5s;
         }
         &:nth-child(2) {
-          transform: scale(1.2);
-          transition-delay: 0.1s;
-        }
-        &:nth-child(3) {
-          transform: scale(1.2);
-          transition-delay: 0.2s;
+          transition-delay: 0.25s;
         }
       }
     }
@@ -76,13 +73,91 @@
   top: 0;
   right: 0;
   z-index: 2;
+  width: 100%;
+  height: 80%;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+
   &.show {
     visibility: visible;
   }
 
-  .menu-nav {
+  .menu-nav,
+  .menu-branding {
+    visibility: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
     &.show {
+      visibility: visible;
     }
+  }
+
+  .menu-branding {
+    width: 50vw;
+    align-items: center;
+    .portrait {
+      height: 200px;
+      width: 200px;
+      background: url(/dist/images/me.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 3px solid $secondary;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translate3d(800px, -800px, 0);
+      @include easeOut;
+      transition-delay: 0.1s;
+    }
+
+    &.show > .portrait {
+      transform: translate3d(0, 0, 0);
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .menu-nav {
+    list-style: none;
+    text-align: left;
+  }
+  .nav-item {
+    margin: 0rem;
+    border-left: 4px solid lighten($primary, 50);
+
+    transform: translate3d(600px, -600px, 0);
+    @include easeOut;
+    transition-duration: 0.4s;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+      margin-top: 1.5rem;
+    }
+
+    &.current > a {
+      background: $secondary;
+    }
+  }
+
+  .nav-link {
+    font-family: "Oswald";
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    @include easeOut;
+
+    &:hover {
+      background: $secondary;
+    }
+  }
+}
+
+@for $x from 1 to 5 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
