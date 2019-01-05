@@ -1,0 +1,94 @@
+@include sm {
+  .card {
+    height: 65px;
+    padding: 0;
+    border: none;
+  }
+  h1,
+  h2 {
+    &.lg-heading {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    &.sm-heading {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  .menu {
+    flex-direction: column;
+
+    div.menu-branding,
+    ul.menu-nav {
+      width: 100%;
+    }
+
+    .menu-branding {
+      height: 25vh;
+      margin-top: 5rem;
+      .portrait {
+        height: 150px;
+        width: 150px;
+        background-size: cover;
+      }
+    }
+
+    .menu-nav {
+      height: 75vh;
+      width: 100vw;
+      text-align: center;
+      padding: 0;
+      align-items: center;
+    }
+
+    .nav-item {
+      border: none;
+      width: 50%;
+    }
+
+    .nav-link {
+      padding: 0 0.5rem;
+    }
+  }
+
+  main#Home {
+    padding: 3rem 0.5rem 0.5rem 0.5rem;
+
+    .icons {
+      text-align: center;
+    }
+  }
+}
+@include md {
+  .card {
+    height: 65px;
+  }
+  h1,
+  h2 {
+    &.lg-heading {
+      font-size: 3.5rem;
+    }
+
+    &.sm-heading {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@include lg {
+  .card {
+    height: 85px;
+  }
+  h1,
+  h2 {
+    &.lg-heading {
+      font-size: 4.5rem;
+    }
+
+    &.sm-heading {
+      font-size: 3rem;
+    }
+  }
+}

@@ -96,15 +96,22 @@
     text-align: left; }
   .menu .nav-item {
     margin: 0rem;
-    border-left: 4px solid #b5b5b5;
     transform: translate3d(600px, -600px, 0);
     transition: all 0.5s ease-out;
     transition-duration: 0.4s; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0);
       margin-top: 1.5rem; }
-    .menu .nav-item.current > a {
-      background: #fbc00c; }
+    .menu .nav-item.current > a::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: #fbc00c;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.5s ease-out; }
     .menu .nav-item:nth-child(1) {
       transition-delay: 0.4s; }
     .menu .nav-item:nth-child(2) {
@@ -121,8 +128,26 @@
     text-decoration: none;
     padding: 0 1.5rem;
     transition: all 0.5s ease-out; }
-    .menu .nav-link:hover {
-      background: #fbc00c; }
+    .menu .nav-link::after {
+      content: "";
+      height: 100%;
+      width: 0;
+      background: #fbc00c;
+      border-left: 4px solid #b5b5b5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.5s ease-out; }
+    .menu .nav-link:hover::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: #fbc00c;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1; }
 
 * {
   box-sizing: border-box; }
@@ -147,7 +172,8 @@ html {
   border-left: 3px #b5b5b5 solid;
   padding-left: 2em;
   height: 100px;
-  margin-top: 18vh; }
+  margin-top: 18vh;
+  width: 100%; }
 
 h1,
 h2,
@@ -158,31 +184,90 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 5.5rem; }
-    h1.lg-heading span,
-    h2.lg-heading span,
-    h3.lg-heading span {
-      color: #fbc00c; }
+    font-size: 5.5em; }
+    h1.lg-heading span.secondary,
+    h2.lg-heading span.secondary,
+    h3.lg-heading span.secondary {
+      color: #fbbe04; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
     font-family: "Sarpanch";
     font-size: 3.5rem;
     width: auto; }
+    h1.sm-heading::after,
+    h2.sm-heading::after,
+    h3.sm-heading::after {
+      content: ".";
+      visibility: hidden; }
 
-main .text {
-  margin-bottom: 2em; }
-
-main .icons {
-  position: absolute;
-  top: 350px;
-  margin-top: 1rem; }
-  main .icons a {
-    padding: 0.4rem;
-    text-decoration: none;
-    color: #353535; }
-    main .icons a:hover {
-      color: #fbc00c; }
+main .icons a {
+  padding: 0.4rem;
+  text-decoration: none;
+  color: #353535; }
+  main .icons a:hover {
+    color: #fbc00c; }
 
 main {
   padding: 4rem; }
+
+@media screen and (max-width: 534px) {
+  .card {
+    height: 65px;
+    padding: 0;
+    border: none; }
+  h1.lg-heading,
+  h2.lg-heading {
+    font-size: 3rem;
+    text-align: center; }
+  h1.sm-heading,
+  h2.sm-heading {
+    font-size: 2rem;
+    text-align: center; }
+  .menu {
+    flex-direction: column; }
+    .menu div.menu-branding,
+    .menu ul.menu-nav {
+      width: 100%; }
+    .menu .menu-branding {
+      height: 25vh;
+      margin-top: 5rem; }
+      .menu .menu-branding .portrait {
+        height: 150px;
+        width: 150px;
+        background-size: cover; }
+    .menu .menu-nav {
+      height: 75vh;
+      width: 100vw;
+      text-align: center;
+      padding: 0;
+      align-items: center; }
+    .menu .nav-item {
+      border: none;
+      width: 50%; }
+    .menu .nav-link {
+      padding: 0 0.5rem; }
+  main#Home {
+    padding: 3rem 0.5rem 0.5rem 0.5rem; }
+    main#Home .icons {
+      text-align: center; } }
+
+@media screen and (max-width: 768px) {
+  .card {
+    height: 65px; }
+  h1.lg-heading,
+  h2.lg-heading {
+    font-size: 3.5rem; }
+  h1.sm-heading,
+  h2.sm-heading {
+    font-size: 2.5rem; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .card {
+    height: 85px; }
+  h1.lg-heading,
+  h2.lg-heading {
+    font-size: 4.5rem; }
+  h1.sm-heading,
+  h2.sm-heading {
+    font-size: 3rem; } }

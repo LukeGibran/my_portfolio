@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Sarpanch");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+
 @mixin easeOut {
   transition: all 0.5s ease-out;
+}
+@mixin sm {
+  @media screen and (max-width: 534px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
 }

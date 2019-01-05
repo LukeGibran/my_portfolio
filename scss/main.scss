@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Sarpanch");
-@import url("https://fonts.googleapis.com/css?family=Raleway");
 @import "variables";
 @import "config";
 @import "menu";
@@ -29,6 +27,7 @@ html {
   padding-left: 2em;
   height: 100px;
   margin-top: 18vh;
+  width: 100%;
 }
 
 h1,
@@ -38,9 +37,9 @@ h3 {
   font-weight: 400;
   color: $primary;
   &.lg-heading {
-    font-size: 5.5rem;
-    span {
-      color: $secondary;
+    font-size: 5.5em;
+    span.secondary {
+      color: darken($secondary, 1.5);
     }
   }
 
@@ -48,18 +47,15 @@ h3 {
     font-family: "Sarpanch";
     font-size: 3.5rem;
     width: auto;
+    &::after {
+      content: ".";
+      visibility: hidden;
+    }
   }
 }
 
 main {
-  .text {
-    margin-bottom: 2em;
-  }
-
   .icons {
-    position: absolute;
-    top: 350px;
-    margin-top: 1rem;
     a {
       padding: 0.4rem;
       text-decoration: none;
@@ -75,3 +71,5 @@ main {
 main {
   padding: 4rem;
 }
+
+@import "mobile";
