@@ -161,7 +161,8 @@ html {
   font-family: "Raleway", sans-serif; }
 
 .bg {
-  clip-path: polygon(calc(100% - 35vw) 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 29% 0, 94% 100%, 0 100%);
+  clip-path: polygon(0 0, 29% 0, 94% 100%, 0 100%);
   background: #ebebeb;
   position: absolute;
   width: 100%;
