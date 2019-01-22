@@ -1,4 +1,4 @@
-class TypeWriter {
+export default class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
     this.txtElement = txtElement;
     this.words = words;
@@ -48,16 +48,4 @@ class TypeWriter {
     }
     setTimeout(() => this.type(), typeSpeed);
   }
-}
-
-// Init On DOM Load
-document.addEventListener("DOMContentLoaded", setTimeout(init, 900));
-
-// Init app
-function init() {
-  const txtElement = document.querySelector(".sm-heading");
-  const words = ["Web Developer", "Web Designer", "Programmer"];
-  const wait = "3000";
-  // Init TypeWriter
-  new TypeWriter(txtElement, words, wait);
 }

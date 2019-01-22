@@ -15,18 +15,18 @@ gulp.task("sass", function() {
   });
 });
 
-gulp.task("script", function() {
-  return new Promise((res, rej) => {
-    gulp
-      .src("js/*.js")
-      .pipe(concat("main.js"))
-      .pipe(gulp.dest("dist/js"));
+// gulp.task("script", function() {
+//   return new Promise((res, rej) => {
+//     gulp
+//       .src("js/*.js")
+//       .pipe(concat("main.js"))
+//       .pipe(gulp.dest("dist/js"));
 
-    res();
-  });
-});
+//     res();
+//   });
+// });
 
 gulp.task("watch", function() {
   gulp.watch("scss/*.scss", gulp.series("sass"));
-  gulp.watch("js/*.js", gulp.series("script"));
+  // gulp.watch("js/*.js", gulp.series("script"));
 });

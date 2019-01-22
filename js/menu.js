@@ -4,6 +4,7 @@ const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
 const navBg = document.querySelector(".nav-bg");
+import TypeWriter from "./typewrite";
 
 let showMenu = false;
 
@@ -33,4 +34,15 @@ function toggleMenu() {
 
     showMenu = false;
   }
+}
+// Init On DOM Load
+document.addEventListener("DOMContentLoaded", setTimeout(init, 900));
+
+// Init app
+function init() {
+  const txtElement = document.querySelector(".sm-heading");
+  const words = ["Web Developer", "Web Designer", "Programmer"];
+  const wait = "3000";
+  // Init TypeWriter
+  new TypeWriter(txtElement, words, wait);
 }
