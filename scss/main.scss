@@ -1,6 +1,6 @@
-@import "variables";
-@import "config";
-@import "menu";
+@import 'variables';
+@import 'config';
+@import 'menu';
 * {
   box-sizing: border-box;
 }
@@ -9,8 +9,9 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
-  font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Raleway', sans-serif;
 }
 
 .bg {
@@ -45,11 +46,11 @@ h3 {
   }
 
   &.sm-heading {
-    font-family: "Sarpanch";
+    font-family: 'Sarpanch';
     font-size: 3.5rem;
     width: auto;
     &::after {
-      content: ".";
+      content: '.';
       visibility: hidden;
     }
   }
@@ -73,4 +74,97 @@ main {
   padding: 4rem;
 }
 
-@import "mobile";
+#about {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  .box {
+    width: 80%;
+    background: #ffffff;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin-top: 3rem;
+    padding: 3rem;
+    border-bottom: 8px solid $secondary;
+  }
+}
+
+.box .img-profile {
+  position: absolute;
+  top: -100px;
+  left: 35px;
+  height: 200px;
+  width: 200px;
+  border: 3px solid $secondary;
+  border-radius: 50%;
+}
+
+.box .text {
+  margin-top: 80px;
+
+  h3 {
+    font-size: 3.5rem;
+  }
+}
+
+.box .pr_lang,
+.pr_databases {
+  h4 {
+    color: $primary;
+    font-size: 1.5rem;
+  }
+}
+
+.pr {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+}
+
+.icons_logos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon_item {
+  height: 48px;
+  width: 48px;
+  margin-left: 10px;
+}
+
+.icon_container {
+  position: relative;
+  cursor: pointer;
+}
+
+.icon_container::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 90px;
+  color: $primary;
+  border-radius: 5px;
+  padding-top: 5px;
+  text-align: center;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+
+.icon_container:hover {
+  .icon_item {
+    transform: translateY(-5px);
+  }
+
+  &::after {
+    top: -20%;
+    z-index: 1;
+  }
+}
+
+// .icon_container:hover::after {
+
+// }
+@import 'mobile';

@@ -137,7 +137,7 @@
 
     &.current > a {
       &::after {
-        content: "";
+        content: '';
         height: 100%;
         width: 100%;
         background: $secondary;
@@ -164,7 +164,7 @@
   }
 
   .nav-link {
-    font-family: "Oswald";
+    font-family: 'Oswald';
     font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -173,7 +173,7 @@
     @include easeOut;
 
     &::after {
-      content: "";
+      content: '';
       height: 100%;
       width: 0;
       background: $secondary;
@@ -187,7 +187,7 @@
 
     &:hover {
       &::after {
-        content: "";
+        content: '';
         height: 100%;
         width: 100%;
         background: $secondary;
