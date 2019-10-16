@@ -100,6 +100,7 @@
     align-items: center;
     .portrait {
       height: 200px;
+      min-height: 100px;
       width: 200px;
       background: url(/dist/images/me.png);
       background-repeat: no-repeat;
